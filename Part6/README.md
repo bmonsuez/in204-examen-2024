@@ -199,7 +199,7 @@ Dites parmi les définitions suivantes :
 | Instanciation | Compile |
 |-------|-------|
 `interval<int>`||
-`interval<long unsigned>`||
+`interval<unsigned long>`||
 `interval<double>`||
 `interval<std::string>`||
 
@@ -210,7 +210,7 @@ ___
 | Instanciation | Compile |
 |-------|-------|
 | `interval<int>` |  Compile et est correct.| 
-| `interval<long unsigned>`|  Compile et est correct.| 
+| `interval<unsigned long>`|  Compile et est correct.| 
 | `interval<double>`|  Compile mais n'est pas correct. En effet, nous manipulons des nombres à virgule flottant et l'énumération ne va pas retourner les entiers dans l'interval. | 
 | `interval<std::string>` | Ne compile pas parce qu'il n'est pas possible d'ajouter un entier ou d'enlever un entier à un chaîne de caractères. |
 

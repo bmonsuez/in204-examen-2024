@@ -327,7 +327,7 @@ Dites parmi les définitions suivantes :
 | Instanciation | Compile |
 |-------|-------|
 `interval<int>`||
-`interval<long unsigned>`||
+`interval<unsigned long>`||
 `interval<double>`||
 `interval<std::string>`||
 
