@@ -58,15 +58,15 @@ public:
         }
         const_iterator& operator --()
         {
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return *this;
         }
         const_iterator operator --(int)
         {
             const_iterator iterator = *this;
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return iterator;
         }
     };

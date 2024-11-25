@@ -59,17 +59,17 @@ public:
                 mCurrent ++;
             return iterator;
         }
-        const_iterator& operator --() noexcept(true)
+        const_iterator& operator --()
         {
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return *this;
         }
-        const_iterator operator --(int) noexcept(true)
+        const_iterator operator --(int)
         {
             const_iterator iterator = *this;
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return iterator;
         }
     };

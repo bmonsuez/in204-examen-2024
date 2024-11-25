@@ -20,7 +20,7 @@ Nous souhaitons que la classe `interval` soit un containeur. En effet, un object
 
 ### Question 5.1
 
-Est-il est possible de modifier le contenu de l'interval en utilisant un itérateur les valeurs dans le containeur ?
+Est-il est possible de modifier le contenu de l'interval en utilisant un itérateur pour modifier les valeurs de ce containeur ?
 
 **Remarque** : Seul la borne inférieure et la borne supérieure de l'intervalle sont définies, les autres valeurs sont immutables.
 
@@ -133,15 +133,15 @@ public:
         }
         const_iterator& operator --()
         {
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return *this;
         }
         const_iterator operator --(int)
         {
             const_iterator iterator = *this;
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return iterator;
         }
     };
@@ -208,6 +208,8 @@ Pour la fonction `end()`, il retourne l'élément dans le containeur qui est l'�
 
 ___
 
+### Question 5.5
+
 Nous avons implanté le type `const_iterator` ainsi que les fonction `const_iterator begin() const` et `const_iterator end() const`. Nous devons désormais implanter les autres types:
 
 | Type | Description |
@@ -233,7 +235,6 @@ public:
 
 Implanter les types qui n'ont pas été encore défini en utilisant des alias de types.
 
-
 ___
 
 ** Correction **
@@ -256,7 +257,7 @@ Enfin le type désignant le nombre d'élément est un entier, il doit avoir la m
 ```
 ___
 
-### Question 5.5
+### Question 5.6
 
 | Expression | Type de retour | Description |
 |------------|----------------|-------------|

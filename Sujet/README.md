@@ -116,8 +116,7 @@ Nous souhaitons que la classe `interval` soit un containeur. En effet, un object
 
 ### Question 5.1
 
-Est-il possible de modifier le contenu de l'interval en utilisant un itérateur les valeurs dans le containeur ?
-
+Est-il est possible de modifier le contenu de l'interval en utilisant un itérateur pour modifier les valeurs de ce containeur ?
 
 **Remarque** : Seul la borne inférieure et la borne supérieure de l'intervalle sont définies, les autres valeurs sont immutables.
 
@@ -197,15 +196,15 @@ public:
         }
         const_iterator& operator --()
         {
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return *this;
         }
         const_iterator operator --(int)
         {
             const_iterator iterator = *this;
-            if(mCurrent <= mInterval->mUpperBound)
-                mCurrent ++;
+            if(mCurrent >= mInterval->mLowerBound)
+                mCurrent --;
             return iterator;
         }
     };
